@@ -1,11 +1,21 @@
 dwm - dynamic window manager
 ============================
 dwm is an extremely fast, small, and dynamic window manager for X.
+TODO
+====
+make the thing fucking better
+
+personal notes
+===============
+aslstatus originates from this:
+https://notabug.org/dm9pZCAq/aslstatus
+and these configs are basically 90%  based on this:
 
 
 Requirements
 ------------
 In order to build dwm you need the Xlib header files.
+also make sure to have dmenu and rofi if you want to use my scripts
 
 
 Installation
