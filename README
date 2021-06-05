@@ -1,22 +1,29 @@
 dwm - dynamic window manager
 ============================
 dwm is an extremely fast, small, and dynamic window manager for X.
+it's from the suckless guys. I hate dwm honestly yet I use it.
+
 TODO
 ====
 make the thing fucking better
+manage to make plumb work
+  switch to xmonad
 
 personal notes
 ===============
 aslstatus originates from this:
 https://notabug.org/dm9pZCAq/aslstatus
-and these configs are basically 90%  based on this:
 
+and these configs are basically 90%  based on this:
+https://github.com/cyber-duk/dwm
+
+also the plumbing scripts originates from luke smith but since I dislike him (and he never fucking published it) I'm not gonna credit him.
+wait a min-
 
 Requirements
 ------------
 In order to build dwm you need the Xlib header files.
-also make sure to have dmenu and rofi if you want to use my scripts
-
+also make sure to have dmenu and rofi if you want to use my scripts.
 
 Installation
 ------------
@@ -55,4 +62,6 @@ like this in your .xinitrc:
 Configuration
 -------------
 The configuration of dwm is done by creating a custom config.h
-and (re)compiling the source code.
+and (re)compiling the source code. Obviouly, modifiy the thing to your setup.
+
+something something gpl muh free software
