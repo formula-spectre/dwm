@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# dmusick_path / History
+cachedir="/tmp/"
+cache="$cachedir/dmusick"
+
+[ ! -e "$cache" ] && touch "$cache"
+
+if [ ! -s "$cache" ]; then
+        FNORD=$(echo | dmenu "$@" -p ♫)
+else
+        FNORD=$(sort $cache | uniq | dmenu "$@" -p ♫)
+fi
+
+
+[ ! -z "$FNORD" ] && youtube-dl --rm-cache-dir -o - -q "ytsearch: $FNORD" | mpv --quiet --really-quiet - & disown
+echo "$FNORD" >> $cache

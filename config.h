@@ -84,7 +84,7 @@ static char *termcmd[]    = { "xst", NULL };
 static char *plumber[]    = { "sh ", "~/.config/dwm/scripts/plumb.sh", NULL };
 static char *slock[]      = { "slock", NULL };
 static char *dmenucmd[]   = { "rofi", "-show","run", NULL };
-static char *dmusick[]   = { "dmusick", "-c","-l","6", NULL };
+static char *dmusick[]   = { "~/.config/dwm/scripts/dmusick", "-c","-l","6", NULL };
 
 /*
  * Xresources preferences to load at startup
@@ -160,7 +160,7 @@ static Key keys[] = {
 
 	{ MODKEY,                       -1,	XK_0,		view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             -1,	XK_0,		tag,            {.ui = ~0 } },
-	{ MODKEY|ShiftMask,             -1,	XK_p,		spawn,          {.v = dmusick } },
+	{ MODKEY|ShiftMask,             -1,	XK_p,		spawn,          SHCMD("~/.config/dwm/scripts/dmusick -c -l 6 &disown") },
 	{ MODKEY,                       -1,	XK_comma,	focusmon,       {.i = -1 } },
 	{ MODKEY,                       -1,	XK_period,	focusmon,       {.i = +1 } },
 	{ MODKEY|ControlMask|ShiftMask, -1,	XK_comma,	tagmon,         {.i = -1 } },
