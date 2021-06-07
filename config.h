@@ -49,7 +49,7 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class             instance    title   tags mask  switchtag  iscentered  isfloating   monitor */
-	{ "mpv",             NULL,       NULL,   0,         0,         0,          1,           -1 },
+	{ "mpv",                NULL,       NULL,   0,         0,         0,          1,           -1 },
 	{ "arandr",             NULL,       NULL,   0,         0,         0,          1,           -1 },
 };
 
@@ -84,7 +84,6 @@ static char *termcmd[]    = { "xst", NULL };
 static char *plumber[]    = { "sh ", "~/.config/dwm/scripts/plumb.sh", NULL };
 static char *slock[]      = { "slock", NULL };
 static char *dmenucmd[]   = { "rofi", "-show","run", NULL };
-static char *dmusick[]   = { "~/.config/dwm/scripts/dmusick", "-c","-l","6", NULL };
 
 /*
  * Xresources preferences to load at startup
@@ -165,7 +164,6 @@ static Key keys[] = {
 	{ MODKEY,                       -1,	XK_period,	focusmon,       {.i = +1 } },
 	{ MODKEY|ControlMask|ShiftMask, -1,	XK_comma,	tagmon,         {.i = -1 } },
 	{ MODKEY|ControlMask|ShiftMask, -1,	XK_period,	tagmon,         {.i = +1 } },
-        { MODKEY,                       -1,	XK_m,    	spawn,          SHCMD("wal -i $(find ~/Pictures/Walls/* | shuf | head -n 1")},
         { Mod1Mask,                     -1,	XK_o,    	spawn,          SHCMD("sh ~/.config/dwm/scripts/search.sh &disown") },
         { Mod1Mask,                     -1,	XK_i,    	spawn,          SHCMD("greenclip-menu &") },
         { ControlMask|Mod1Mask,         -1,	XK_v,    	spawn,          SHCMD("~/.vim-anywhere/bin/run &") },
