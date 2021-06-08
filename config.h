@@ -80,8 +80,7 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } },
 
 /* commands */
-static char *termcmd[]    = { "xst", NULL };
-static char *plumber[]    = { "sh ", "~/.config/dwm/scripts/plumb.sh", NULL };
+static char *termcmd[]    = { "alacritty", NULL };
 static char *slock[]      = { "slock", NULL };
 static char *dmenucmd[]   = { "rofi", "-show","run", NULL };
 
