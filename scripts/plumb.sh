@@ -23,7 +23,7 @@ echo "$prim" | grep "^.*@.*\.[A-Za-z]\+$" >/dev/null && email() { xdg-email "$@"
 #command -v qrencode >/dev/null && qrcode() { qrencode "$@" -s 10 -o /tmp/qr.png && xdg-open /tmp/qr.png ;}
 man -k "^$prim$" >/dev/null && manual() { man -Tpdf "$prim" | zathura - ;}
 
-func="$(declare -F | awk '{print $3}' | dmenu -c -p "Plumb $prim to?" -i -l 15)"
+func="$(declare -F | awk '{print $3}' | rofi -dmenu -p "Plumb $prim to?" -i -l 15)"
 #func="$(declare -F | awk '{print $3}' | rofi -dmenu -e "Plumb $prim to?" -i -l 15)"
 
 [ -z "$func" ] || "$func" "$prim"

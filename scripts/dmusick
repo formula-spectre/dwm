@@ -7,9 +7,9 @@ cache="$cachedir/dmusick"
 [ ! -e "$cache" ] && touch "$cache"
 
 if [ ! -s "$cache" ]; then
-        FNORD=$(echo | dmenu "$@" -p ♫)
+        FNORD=$(rofi -dmenu -p ♫)
 else
-        FNORD=$(sort $cache | uniq | dmenu "$@" -p ♫)
+        FNORD=$(sort $cache | uniq | rofi -dmenu -p ♫)
 fi
 
 
