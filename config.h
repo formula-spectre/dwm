@@ -164,7 +164,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask|ShiftMask, -1,	XK_comma,	tagmon,         {.i = -1 } },
 	{ MODKEY|ControlMask|ShiftMask, -1,	XK_period,	tagmon,         {.i = +1 } },
         { Mod1Mask,                     -1,	XK_o,    	spawn,          SHCMD("sh ~/.config/dwm/scripts/search.sh &disown") },
-        { Mod1Mask,                     -1,	XK_i,    	spawn,          SHCMD("greenclip-menu &") },
+        { Mod1Mask,                     -1,	XK_i,    	spawn,          SHCMD("sh ~/.config/dwm/scripts/greenclip-menu &") },
         { ControlMask|Mod1Mask,         -1,	XK_v,    	spawn,          SHCMD("~/.vim-anywhere/bin/run &") },
         { Mod1Mask,                     -1,	XK_l,     	spawn,          {.v = slock} },
 	TAGKEYS(                        -1,	XK_1,                      0)
