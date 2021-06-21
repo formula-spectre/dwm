@@ -1,0 +1,27 @@
+.Dd September 2020
+.Dt ASLSTATUS 1
+.Os
+.Sh NAME
+.Nm aslstatus
+.Nd async suckless status monitor
+.Sh SYNOPSIS
+.Nm
+.Op Fl s
+.Sh DESCRIPTION
+.Nm
+is a suckless multi thread status monitor for window managers
+that use WM_NAME (e.g. dwm) or stdin to fill the status bar.
+By defaul,
+.Nm
+outputs to WM_NAME.
+.Sh OPTIONS
+.Bl -tag -width Ds
+.It Fl s
+Write to stdout instead of WM_NAME.
+.Sh SIGNALS
+If segment (thread) receive \fIUSR1\fR signal then that segmen will be force updated
+.El
+.Sh CUSTOMIZATION
+.Nm
+can be customized by creating a custom config.h and (re)compiling the source
+code. This keeps it fast, secure and simple.
