@@ -2,14 +2,13 @@
 # Dependencies are xclip and xorg-xprop.
 # qrencode required for qrcode generation.
 # groff/zathura required for man pages.
-BROWSER=$(which qutebrowser)
 prim="$(xclip -o)"; [ -z "$prim" ] && exit
 
 PID=$(xprop -id "$(xprop -root | awk '/_NET_ACTIVE_WINDOW\(WINDOW\)/{print $NF}')" | grep -m 1 PID | cut -d " " -f 3)
 PID=$(echo "$(pstree -lpA "$PID" | tail -n 1)" | awk  -F'---' '{print $NF}' | sed -re 's/[^0-9]//g')
 cd "$(readlink /proc/"$PID"/cwd)"
-#[ -f "$prim" ] && xdg-open "$prim" && exit
 [ -f "$prim" ] && mimeopen "$prim" && exit
+#[ -f "$prim" ] && xdg-open "$prim" && exit
 [ -d "$prim" ] && "$TERMINAL" "$prim" && exit
 websearch() { "$BROWSER" "https://duckduckgo.com/?q=$@" ;}
 wikipedia() { "$BROWSER" "https://en.wikipedia.org/wiki/$@" ;}
