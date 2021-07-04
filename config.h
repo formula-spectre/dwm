@@ -10,24 +10,24 @@ static int showsystray        = 1;     /* 0 means no systray */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static char *fonts[]          = { "Iosevka Nerd Font:size=10:antialias=true:autohint=true" };
-static char color0[]       = "#161821";
-static char color1[]       = "#e27878";
-static char color2[]       = "#b4be62";
-static char color3[]       = "#e2a478";
-static char color4[]       = "#84a0c6";
-static char color5[]       = "#a093c7";
-static char color6[]       = "#89b8c2";
-static char color7[]       = "#c6c8d1";
+static char black[]        = "#06080a";
+static char red[]          = "#F7768E";
+static char yellow[]       = "#E0AF68";
+static char orange[]       = "#FF9E64";
+static char blue[]         = "#3e5380";
+static char purple[]       = "#ad8ee6";
+static char cyan[]         = "#7da6ff";
+static char white[]        = "#444B6A";
 
 static char *colors[][4]      = {
 	/*               fg      bg      border  float  */
-	[SchemeNorm] = { color7, color0, color0, color5 },
-	[SchemeSel]  = { color0, color7, color2, color3 },
-	[SchemeHid]  = { color4, color0 }, /* title bar hidden titles */
-	[SchemeLti]  = { color0, color4 }, /* layout indicator */
-	[SchemeSts]  = { color0, color4 }, /* status bar */
-	[SchemeTgN]  = { color7, color0 }, /* tag normal */
-	[SchemeTgS]  = { color0, color4 }, /* tag selected */
+	[SchemeNorm] = { purple, black, purple, white },
+	[SchemeSel]  = { purple, white, yellow, orange },
+	[SchemeHid]  = { purple, black }, /* title bar hidden titles */
+	[SchemeLti]  = { black, purple }, /* layout indicator */
+	[SchemeSts]  = { black, purple }, /* status bar */
+	[SchemeTgN]  = { white, black }, /* tag normal */
+	[SchemeTgS]  = { black, purple }, /* tag selected */
 };
 
 static int focusonclick            = 0;   /* 1 means focus on click */
@@ -88,14 +88,14 @@ static char *dmenucmd[]   = { "rofi", "-show","run", NULL };
  * Xresources preferences to load at startup
  */
 ResourcePref resources[] = {
-	{ "dwm.color0",		STRING,  &color0 },
-	{ "dwm.color1",		STRING,  &color1 },
-	{ "dwm.color2",		STRING,  &color2 },
-	{ "dwm.color3",		STRING,  &color3 },
-	{ "dwm.color4",		STRING,  &color4 },
-	{ "dwm.color5",		STRING,  &color5 },
-	{ "dwm.color6",		STRING,  &color6 },
-	{ "dwm.color7",		STRING,  &color7 },
+	{ "dwm.black",		STRING,  &black },
+	{ "dwm.red",		STRING,  &red },
+	{ "dwm.yellow",		STRING,  &yellow },
+	{ "dwm.orange",		STRING,  &orange },
+	{ "dwm.blue",		STRING,  &blue },
+	{ "dwm.purple",		STRING,  &purple },
+	{ "dwm.cyan",		STRING,  &cyan },
+	{ "dwm.white",		STRING,  &white },
 	{ "dwm.borderpx",	INTEGER, &borderpx },
 	{ "dwm.snap",		INTEGER, &snap },
 	{ "dwm.showbar",	INTEGER, &showbar },
